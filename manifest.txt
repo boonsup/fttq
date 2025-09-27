@@ -1,0 +1,63 @@
+========================================================
+ArXiv Submission Package: "Maximizing Δ_topo for Fault-Tolerant Topological Qubits"
+========================================================
+
+This package contains the full LaTeX source, figures, and supplementary
+materials required to compile and reproduce the manuscript.
+
+--------------------------------------------------------
+Core Manuscript
+--------------------------------------------------------
+main.tex             - Main LaTeX source file
+main.bib             - BibTeX database with 25+ curated references
+main.bbl             - Compiled bibliography (for arXiv compatibility)
+further_reading.tex  - Unused references block (to absorb all bibitems)
+
+--------------------------------------------------------
+Figures (all PDF format, arXiv-compliant)
+--------------------------------------------------------
+figures/fig1_qubit_concept.pdf        - Conceptual schematic of exciton qubit
+figures/fig2_gap_barrier.pdf          - Energy gap barrier illustration
+figures/fig3_materials_blueprint.pdf  - Materials engineering blueprint
+figures/fig4_scaling_B_real.pdf       - Δ_topo vs magnetic field scaling
+figures/fig4_scaling_eps_real.pdf     - Δ_topo vs dielectric constant scaling
+figures/fig_benchmark_gap_vs_overhead.pdf - Benchmark roadmap: topological gap vs overhead
+--------------------------------------------------------
+Supplementary Information
+--------------------------------------------------------
+supplementary/supplementary.tex       - LaTeX source for supplementary info
+supplementary/supplementary.pdf       - Precompiled supplementary (optional)
+supplementary/supplementary_table1.csv- Machine-readable Δ_topo dataset (B, ε, κ)
+supplementary/supplementary_fig1_workflow.pdf - Workflow schematic (Fig. S1)
+
+--------------------------------------------------------
+Metadata & Licensing
+--------------------------------------------------------
+README_arxiv.md   - Overview of package contents and Zenodo DOI
+LICENSE           - Dual license: MIT (code) + CC-BY 4.0 (data/figures)
+manifest.txt      - This file
+
+--------------------------------------------------------
+External Data
+--------------------------------------------------------
+All raw data and scripts are additionally archived at Zenodo:
+DOI: 10.5281/zenodo.17213190
+
+--------------------------------------------------------
+Build Instructions
+--------------------------------------------------------
+To compile the manuscript PDF with references and supplementary information:
+
+1. Run pdflatex to generate aux files:
+   pdflatex main
+
+2. Run bibtex to process the bibliography:
+   bibtex main
+
+3. Re-run pdflatex twice to resolve references:
+   pdflatex main
+   pdflatex main
+
+This will produce main.pdf (manuscript with figures and references).
+The supplementary information can be compiled separately:
+   pdflatex supplementary/supplementary.tex
